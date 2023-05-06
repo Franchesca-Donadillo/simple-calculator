@@ -7,7 +7,7 @@ from rich.theme import Theme
 from rich.console import Console
 
 # generate theme
-theme_calc = Theme({})
+theme_calc = Theme({"error" : "bold red"})
 console_calc = Console(theme = theme_calc)
 
 # use while loop
@@ -57,10 +57,10 @@ while True:
 
     # use exeption to capture errors
     except ZeroDivisionError:
-        print("\nInvalid. You are dividing by zero.")
+        console_calc.print("\nInvalid. You are dividing by zero.", style = "error")
 
     except ValueError:
-        print("\nInvalid value. Enter integers only")
+        console_calc.print("\nInvalid value. Enter integers only", style = "error")
     
     finally:
         # ask user if they want to repeat
