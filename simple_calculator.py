@@ -10,7 +10,7 @@ from rich.theme import Theme
 from rich.console import Console
 
 # generate theme
-theme_calc = Theme({"error" : "bold red"})
+theme_calc = Theme({"error" : "bold red", "thank" : "magenta"})
 console_calc = Console(theme = theme_calc)
 
 # use while loop
@@ -83,5 +83,6 @@ while True:
             print()
         # if no, exit the program 
         elif user_repeat == "no":
-            print("\nThank You!\n")
+            thanks = pyfiglet.figlet_format("THANK YOU!", font = "linux")
+            console_calc.print("\n" + thanks + "\n", style = "thank")
             exit()
