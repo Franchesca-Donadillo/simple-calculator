@@ -5,19 +5,22 @@
 # use while loop
 while True:
     
-    # ask user to choose between four math oparations
+    
     # use try
     try:
         # menu
-        print("MATH OPERATIONS")
+        print("_" * 60)
+        print("\n" + "MATH OPERATIONS".center(55))
         print("\n~ ADDITION")
         print("~ SUBTRACTION")
         print("~ MULTIPLICATION")
         print("~ DIVISION")
-        while True: 
+        print("_" * 60)
+        while True:
+            # ask user choose between four math operations 
             user_operation = input("\nEnter what math operation you want to use: ").upper()
 
-            if user_operation != "ADDITION" and "SUBTRACTION" and "MULTIPLICATION" and "DIVISION":
+            if user_operation != "ADDITION" and user_operation != "SUBTRACTION" and user_operation != "MULTIPLICATION" and user_operation != "DIVISION":
                 print("\nEnter only the four math operations.")
 
             else: 
@@ -28,8 +31,9 @@ while True:
                 # perform calculations
                 # display result if there are no errors
                 if user_operation == "ADDITION":
+                    
                     print("\nThe sum of your first and second number is " + str(num_1 + num_2))
-
+        
                 elif user_operation == "SUBTRACTION":
                     print("\nThe difference of your first and second number is " + str(num_1 - num_2)) 
 
@@ -37,15 +41,15 @@ while True:
                     print("\nThe product of your first and second number is " + str(num_1 * num_2))
 
                 elif user_operation == "DIVISION":
-                    print("\nThe quotient of your first and second number is " + (num_1 / num_2))
+                    print("\nThe quotient of your first and second number is " + str(num_1 / num_2))
                 break
 
     # use exeption to capture errors
     except ZeroDivisionError:
-        print("Invalid. You are dividing by zero.")
+        print("\nInvalid. You are dividing by zero.")
 
     except ValueError:
-        print("Invalid value. Enter integers only")
+        print("\nInvalid value. Enter integers only")
     
     finally:
         # ask user if they want to repeat
