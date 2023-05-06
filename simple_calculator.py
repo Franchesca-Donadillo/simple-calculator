@@ -10,7 +10,7 @@ from rich.theme import Theme
 from rich.console import Console
 
 # generate theme
-theme_calc = Theme({"error" : "bold red", "thank" : "magenta"})
+theme_calc = Theme({"error" : "bold red", "thank" : "magenta", "title": "bold blue"})
 console_calc = Console(theme = theme_calc)
 
 # use while loop
@@ -21,7 +21,7 @@ while True:
         # menu
         print("_" * 80)
         title = pyfiglet.figlet_format ("MATH OPERATIONS", font = "cricket")
-        print("\n" + title.center(55))
+        console_calc.print("\n" + title.center(55), style = "title")
         print("\n~ ADDITION")
         print("~ SUBTRACTION")
         print("~ MULTIPLICATION")
