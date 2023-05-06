@@ -2,10 +2,17 @@
 # BSCPE 1-5
 # Assignment 4 - Simple Calculator
 
+# import rich 
+from rich.theme import Theme
+from rich.console import Console
+
+# generate theme
+theme_calc = Theme({})
+console_calc = Console(theme = theme_calc)
+
 # use while loop
 while True:
-    
-    
+       
     # use try
     try:
         # menu
