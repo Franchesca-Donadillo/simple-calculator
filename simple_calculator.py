@@ -12,18 +12,24 @@ try:
     # perform calculations
     # display result if there are no errors
     if user_operation == "ADDITION":
-        print("The sum of your first and second number is " + num_1 + num_2)
+        print("The sum of your first and second number is " + str(num_1 + num_2))
 
     elif user_operation == "SUBTRACTION":
-        print("The difference of your first and second number is " + num_1 - num_2) 
+        print("The difference of your first and second number is " + str(num_1 - num_2)) 
 
     elif user_operation == "MULTIPLICATION":
-        print("The product of your first and second number is " + num_1 * num_2)
+        print("The product of your first and second number is " + str(num_1 * num_2))
 
     elif user_operation == "DIVISION":
-        print("The quotient of your first and second number is " + num_1 / num_2)
+        print("The quotient of your first and second number is " + (num_1 / num_2))
 
 # use exeption to capture errors
+except ZeroDivisionError:
+    print("Invalid. You are dividing by zero.")
+
+except ValueError:
+    print("Invalid value.")
+
 # ask user if they want to repeat
 # use while loop
 # if yes loop from the start
