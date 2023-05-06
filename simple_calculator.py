@@ -21,7 +21,8 @@ while True:
             user_operation = input("\nEnter what math operation you want to use: ").upper()
 
             if user_operation != "ADDITION" and user_operation != "SUBTRACTION" and user_operation != "MULTIPLICATION" and user_operation != "DIVISION":
-                print("\nEnter only the four math operations.")
+                print("\nEnter only the four math operations.\n(check your spelling)")
+                print("_" * 60)
 
             else: 
                 # Ask user for two numbers
@@ -31,17 +32,20 @@ while True:
                 # perform calculations
                 # display result if there are no errors
                 if user_operation == "ADDITION":
-                    
                     print("\nThe sum of your first and second number is " + str(num_1 + num_2))
-        
+                    print("_" * 60)
+
                 elif user_operation == "SUBTRACTION":
                     print("\nThe difference of your first and second number is " + str(num_1 - num_2)) 
+                    print("_" * 60)
 
                 elif user_operation == "MULTIPLICATION":
                     print("\nThe product of your first and second number is " + str(num_1 * num_2))
+                    print("_" * 60)
 
                 elif user_operation == "DIVISION":
                     print("\nThe quotient of your first and second number is " + str(num_1 / num_2))
+                    print("_" * 60)
                 break
 
     # use exeption to capture errors
@@ -60,5 +64,5 @@ while True:
             print()
         # if no, exit the program 
         elif user_repeat == "no":
-            print("\nThank You!")
+            print("\nThank You!\n")
             exit()
