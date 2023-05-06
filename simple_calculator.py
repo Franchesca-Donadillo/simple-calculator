@@ -4,28 +4,41 @@
 
 # use while loop
 while True:
-
+    
     # ask user to choose between four math oparations
     # use try
     try:
-        user_operation = input("Enter what math operation you want to use: ").upper()
-        # Ask user for two numbers
-        num_1 = int(input("Enter first number: "))
-        num_2 = int(input("Enter second number: "))
+        # menu
+        print("MATH OPERATIONS")
+        print("\n~ ADDITION")
+        print("~ SUBTRACTION")
+        print("~ MULTIPLICATION")
+        print("~ DIVISION")
+        while True: 
+            user_operation = input("\nEnter what math operation you want to use: ").upper()
 
-        # perform calculations
-        # display result if there are no errors
-        if user_operation == "ADDITION":
-            print("The sum of your first and second number is " + str(num_1 + num_2))
+            if user_operation != "ADDITION" and "SUBTRACTION" and "MULTIPLICATION" and "DIVISION":
+                print("\nEnter only the four math operations.")
 
-        elif user_operation == "SUBTRACTION":
-            print("The difference of your first and second number is " + str(num_1 - num_2)) 
+            else: 
+                # Ask user for two numbers
+                num_1 = int(input("\nEnter first number: "))
+                num_2 = int(input("Enter second number: "))
 
-        elif user_operation == "MULTIPLICATION":
-            print("The product of your first and second number is " + str(num_1 * num_2))
+                # perform calculations
+                # display result if there are no errors
+                if user_operation == "ADDITION":
+                    print("\nThe sum of your first and second number is " + str(num_1 + num_2))
 
-        elif user_operation == "DIVISION":
-            print("The quotient of your first and second number is " + (num_1 / num_2))
+                elif user_operation == "SUBTRACTION":
+                    print("\nThe difference of your first and second number is " + str(num_1 - num_2)) 
+
+                elif user_operation == "MULTIPLICATION":
+                    print("\nThe product of your first and second number is " + str(num_1 * num_2))
+
+                elif user_operation == "DIVISION":
+                    print("\nThe quotient of your first and second number is " + (num_1 / num_2))
+                break
 
     # use exeption to capture errors
     except ZeroDivisionError:
@@ -33,14 +46,15 @@ while True:
 
     except ValueError:
         print("Invalid value. Enter integers only")
+    
+    finally:
+        # ask user if they want to repeat
+        user_repeat = input("\nDo you want to repeat? yes/no: ").lower()
 
-    # ask user if they want to repeat
-    user_repeat = input("Do you want to repeat? yes/no: ").lower()
-
-    # if yes loop from the start
-    if user_repeat == "yes":
-        print()
-    # if no, exit the program 
-    elif user_repeat == "no":
-        print("Tank You!")
-        exit()
+        # if yes loop from the start
+        if user_repeat == "yes":
+            print()
+        # if no, exit the program 
+        elif user_repeat == "no":
+            print("\nThank You!")
+            exit()
