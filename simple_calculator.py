@@ -2,6 +2,9 @@
 # BSCPE 1-5
 # Assignment 4 - Simple Calculator
 
+# import pyfiglet
+import pyfiglet
+
 # import rich 
 from rich.theme import Theme
 from rich.console import Console
@@ -16,8 +19,9 @@ while True:
     # use try
     try:
         # menu
-        print("_" * 60)
-        print("\n" + "MATH OPERATIONS".center(55))
+        print("_" * 80)
+        title = pyfiglet.figlet_format ("MATH OPERATIONS", font = "cricket")
+        print("\n" + title.center(55))
         print("\n~ ADDITION")
         print("~ SUBTRACTION")
         print("~ MULTIPLICATION")
@@ -39,18 +43,26 @@ while True:
                 # perform calculations
                 # display result if there are no errors
                 if user_operation == "ADDITION":
+                    print("_" * 60)
+                    print("Calculating...." )
                     print("\nThe sum of your first and second number is " + str(num_1 + num_2))
                     print("_" * 60)
 
                 elif user_operation == "SUBTRACTION":
+                    print("_" * 60)
+                    print("Calculating...." )
                     print("\nThe difference of your first and second number is " + str(num_1 - num_2)) 
                     print("_" * 60)
 
                 elif user_operation == "MULTIPLICATION":
+                    print("_" * 60)
+                    print("Calculating...." )
                     print("\nThe product of your first and second number is " + str(num_1 * num_2))
                     print("_" * 60)
 
                 elif user_operation == "DIVISION":
+                    print("_" * 60)
+                    print("Calculating...." )
                     print("\nThe quotient of your first and second number is " + str(num_1 / num_2))
                     print("_" * 60)
                 break
