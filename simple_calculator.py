@@ -36,14 +36,14 @@ while True:
             user_operation = input("\nEnter what math operation you want to use: ").upper()
 
             if user_operation != "ADDITION" and user_operation != "SUBTRACTION" and user_operation != "MULTIPLICATION" and user_operation != "DIVISION":
-                print("\nEnter only the four math operations.\n(check your spelling)")
+                console_calc.print("\nEnter only the four math operations.\n(check your spelling)", style = "error")
                 print("_" * 60)
 
             else: 
                 # Ask user for two numbers
-                num_1 = int(input("\nEnter first number: "))
-                num_2 = int(input("Enter second number: "))
-
+                num_1 = int(input("\n" + colored("Enter first number: ", "yellow")))
+                num_2 = int(input(colored("Enter second number: ", "yellow")))
+                
                 # perform calculations
                 # display result if there are no errors
                 if user_operation == "ADDITION":
