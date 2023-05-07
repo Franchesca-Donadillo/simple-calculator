@@ -91,3 +91,8 @@ while True:
             thanks = pyfiglet.figlet_format("THANK YOU!", font = "linux")
             print("\n" + colored((thanks),"magenta") + "\n")
             exit()
+        # else if there are other input/s
+        elif user_repeat != "yes" and user_repeat != "no":
+            print("\nInvalid input.\n(Check your spelling)")
+            user_repeat = input("\nDo you want to repeat? yes/no: ").lower()
+            print()
