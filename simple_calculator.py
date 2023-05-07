@@ -5,12 +5,15 @@
 # import pyfiglet
 import pyfiglet
 
+# import termcolor
+from termcolor import colored
+
 # import rich 
 from rich.theme import Theme
 from rich.console import Console
 
 # generate theme
-theme_calc = Theme({"error" : "bold red", "thank" : "magenta", "title": "bold blue"})
+theme_calc = Theme({"error" : "bold red", "thank" : "bold green"})
 console_calc = Console(theme = theme_calc)
 
 # use while loop
@@ -21,12 +24,13 @@ while True:
         # menu
         print("_" * 80)
         title = pyfiglet.figlet_format ("MATH OPERATIONS", font = "cricket")
-        console_calc.print("\n" + title.center(55), style = "title")
-        print("\n~ ADDITION")
-        print("~ SUBTRACTION")
-        print("~ MULTIPLICATION")
-        print("~ DIVISION")
+        print("\n" + colored((title.center(55)), "blue"))
+        console_calc.print("\n~ ADDITION", style = "thank")
+        console_calc.print("~ SUBTRACTION", style = "thank")
+        console_calc.print("~ MULTIPLICATION", style = "thank")
+        console_calc.print("~ DIVISION", style = "thank")
         print("_" * 60)
+
         while True:
             # ask user choose between four math operations 
             user_operation = input("\nEnter what math operation you want to use: ").upper()
@@ -69,10 +73,10 @@ while True:
 
     # use exeption to capture errors
     except ZeroDivisionError:
-        console_calc.print("\nInvalid. You are dividing by zero.", style = "error")
+        console_calc.print("\n❗ Invalid. You are dividing by zero.", style = "error")
 
     except ValueError:
-        console_calc.print("\nInvalid value. Enter integers only", style = "error")
+        console_calc.print("\n❗ Invalid value. Enter integers only", style = "error")
     
     finally:
         # ask user if they want to repeat
@@ -84,5 +88,5 @@ while True:
         # if no, exit the program 
         elif user_repeat == "no":
             thanks = pyfiglet.figlet_format("THANK YOU!", font = "linux")
-            console_calc.print("\n" + thanks + "\n", style = "thank")
+            print("\n" + colored((thanks),"magenta") + "\n")
             exit()
