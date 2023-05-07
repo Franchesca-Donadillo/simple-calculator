@@ -7,13 +7,14 @@ import pyfiglet
 
 # import termcolor
 from termcolor import colored
+from termcolor import colored, cprint
 
 # import rich 
 from rich.theme import Theme
 from rich.console import Console
 
 # generate theme
-theme_calc = Theme({"error" : "bold red", "thank" : "bold green"})
+theme_calc = Theme({"error" : "bold red", "thank" : "bold green", "ans": "bold cyan"})
 console_calc = Console(theme = theme_calc)
 
 # use while loop
@@ -49,25 +50,25 @@ while True:
                 if user_operation == "ADDITION":
                     print("_" * 60)
                     print("Calculating...." )
-                    print("\nThe sum of your first and second number is " + str(num_1 + num_2))
+                    cprint("\n" + colored(" The sum of your first and second number is " + str(num_1 + num_2) + ". "),"light_magenta", attrs = ["bold", "reverse"])
                     print("_" * 60)
 
                 elif user_operation == "SUBTRACTION":
                     print("_" * 60)
                     print("Calculating...." )
-                    print("\nThe difference of your first and second number is " + str(num_1 - num_2)) 
+                    cprint("\n" + colored(" The difference of your first and second number is " + str(num_1 - num_2) + ". "),"light_magenta", attrs = ["bold", "reverse"]) 
                     print("_" * 60)
 
                 elif user_operation == "MULTIPLICATION":
                     print("_" * 60)
                     print("Calculating...." )
-                    print("\nThe product of your first and second number is " + str(num_1 * num_2))
+                    cprint("\n" + colored(" The product of your first and second number is " + str(num_1 * num_2) + ". "),"light_magenta", attrs = ["bold", "reverse"])
                     print("_" * 60)
 
                 elif user_operation == "DIVISION":
                     print("_" * 60)
                     print("Calculating...." )
-                    print("\nThe quotient of your first and second number is " + str(num_1 / num_2))
+                    cprint("\n" + colored(" The quotient of your first and second number is " + str(num_1 / num_2) + ". "),"light_magenta", attrs = ["bold", "reverse"])
                     print("_" * 60)
                 break
 
